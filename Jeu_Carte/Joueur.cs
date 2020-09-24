@@ -4,19 +4,19 @@ namespace Jeu_Carte
 {
     class Joueur : Personne
     {
-        public static int nbre_joueur = 0;
-        public List<Carte> liste = new List<Carte>();
-        //public static List<Carte> global = new List<Carte>();
-        public List<Joueur> liste_Joueur = new List<Joueur>();
+        private List<Carte> liste;
         /* Constructor */
         public Joueur(string nom, string prenom, List<Carte> maListe) : base(nom, prenom)
         {
-            liste = maListe;
-            nbre_joueur++;
+            liste = maListe; // <---- Problème lors de la creation d'un deuxième joueur (reference ou copie)
         }
-        public Joueur(string nom, string prenom) : base(nom, prenom)
-        {
 
+        public string GetList_Carte_s()
+        {
+            string output = "";
+            for (int i = 0; i < liste.Count; i++)
+               output += liste[i] + " * ";
+            return output;
         }
 
         public List<Carte> GetList_Carte()
@@ -29,7 +29,6 @@ namespace Jeu_Carte
         {
             liste = value;
         }
-
         public override string ToString()
         {
             //return base.ToString();

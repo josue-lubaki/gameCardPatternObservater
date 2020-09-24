@@ -1,11 +1,12 @@
 ﻿using static Jeu_Carte.Index;
 using System.Collections.Generic;
 
+
 namespace Jeu_Carte
 {
     class Carte
     {
-        public static List<Carte> Paquet = new List<Carte>();
+        public static List<Carte> paquet = new List<Carte>();
         private Color color;
         private string value;
         private string valeur_String;
@@ -85,6 +86,7 @@ namespace Jeu_Carte
             }
             valeur_String = value;
             this.color = couleur;
+
         }
 
         /* GETTER */
