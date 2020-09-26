@@ -32,7 +32,7 @@ namespace Jeu_Carte
                 "Bienvenues à nos Joueurs :\n";
             Console.WriteLine("==================================================================================");
             Console.Write(output);
-            Index.affichage_liste_Joueur(Liste_Joueur);
+            Index.Affichage_liste_Joueur(Liste_Joueur);
             Console.WriteLine("==================================================================================");
 
         }

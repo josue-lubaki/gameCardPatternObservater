@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace Jeu_Carte
 {
+    
     class Carte
     {
         public static List<Carte> paquet = new List<Carte>();
@@ -11,7 +12,6 @@ namespace Jeu_Carte
         private string value;
         private string valeur_String;
         private Color couleur;
-
         /* CONSTRUCTORS */
         public Carte(int chiffre, int spin)
         {
