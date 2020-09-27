@@ -17,6 +17,13 @@ namespace Jeu_Carte
             return liste;
         }
 
+        public string GetList_Carte_s()
+        {
+            string output = "";
+            for (int i = 0; i < liste.Count; i++)
+                output += liste[i] + " * ";
+            return output;
+        }
         public void SetList_Carte(List<Carte> value)
         {
             liste = value;

@@ -9,9 +9,12 @@ namespace Jeu_Carte
     class Index
     {
         public enum Color { Trefle, Carreau, Coeur, Pique };
-        private static int nbre_participant = 1;
+        private static int nbre_participant = 2;
         private static bool arret = false;
-
+        private static int chf;
+        private static Joueur jr_debut;
+        private static Carte trouvee;
+        private static int idx;
         // Liste vide de Joueur qui nous servira d'initialisation lors de la création d'une instance Partie
         private static List<Joueur> list_jr_ = new List<Joueur>();
         private static Partie jeu;
@@ -29,9 +32,8 @@ namespace Jeu_Carte
             */
             List<Carte> liste_u = new List<Carte>();
 
-            Console.Write("Entrer le nombre de Joueur Participant :");
-            nbre_participant = Convert.ToInt32(Console.ReadLine());
-            
+
+
             // Creation de 52 Cartes du Jeu
             for (int i = 1; i <= 13; i++)
             {
@@ -43,27 +45,7 @@ namespace Jeu_Carte
             }
 
 
-            /* La Boucle While() est censée créer 8 Cartes d'une manière aléatoire associées 
-             * à chaque Joueur(nbre_participant).
-             * Ainsi donc si nous avons 2 joueurs, alors liste_u.Count = 16 Cartes puisque le while() s'éxécutera deux fois
-             * Ainsi donc si nous avons 3 joueurs, alors liste_u.Count = 24 Cartes puisque le while() s'éxécutera trois fois
-             * Ainsi de suite...
-             * 
-             *  ===> (code P2) <=== ci-bas
-             */
-            int cpt = 1;
-            while (cpt <= nbre_participant)
-            {
-                for (int t = 0; t < 8; t++)
-                {
-                    Carte hasard = poiche();
-                    Console.WriteLine(hasard);
 
-                    /* ===> (code P1) <=== ci-haut */
-                    liste_u.Add(hasard);
-                }
-                cpt++;
-            }
 
             // première Carte posée sur la table de Jeu
             int number = aleatoire.Next(0, Carte.paquet.Count);
@@ -73,12 +55,39 @@ namespace Jeu_Carte
             // on pose la première carte sur la table de jeu
             Deroulement.cartesJouees.Add(firstCarte);
 
-            // Initialisation de la Partie
-            jeu = new Partie(nbre_participant, list_jr_);
+
 
             int p_index = 1;
             while (p_index <= nbre_participant)
             {
+                do
+                {
+                    Console.Write("Entrer le nombre de Joueur Participant (entre 2 et 4) : ");
+                    nbre_participant = Convert.ToInt32(Console.ReadLine());
+                } while (nbre_participant < 2 || nbre_participant > 4);
+
+                /* La Boucle While() est censée créer 8 Cartes d'une manière aléatoire associées 
+             * à chaque Joueur(nbre_participant).
+             * Ainsi donc si nous avons 2 joueurs, alors liste_u.Count = 16 Cartes puisque le while() s'éxécutera deux fois
+             * Ainsi donc si nous avons 3 joueurs, alors liste_u.Count = 24 Cartes puisque le while() s'éxécutera trois fois
+             * Ainsi de suite...
+             * 
+             *  ===> (code P2) <=== ci-bas
+             */
+                int cpt = 1;
+                while (cpt <= nbre_participant)
+                {
+                    for (int t = 0; t < 8; t++)
+                    {
+                        Carte hasard = poiche();
+                        //Console.WriteLine(hasard);
+
+                        /* ===> (code P1) <=== ci-haut */
+                        liste_u.Add(hasard);
+                    }
+                    cpt++;
+                }
+
                 Joueur p;
                 for (p_index = 1; p_index <= nbre_participant; p_index++)
                 {
@@ -124,6 +133,8 @@ namespace Jeu_Carte
                         "de 4 Joueurs");
                         break;
                     }
+                    // Initialisation de la Partie
+                    jeu = new Partie(nbre_participant, list_jr_);
 
                     // Ajout du nouveau Joueur p dans la liste static des Joueurs (Liste_Joueur) de la classe Partie
                     p = new Joueur(nom_joueur, prenom_joueur, list_contener);
@@ -135,12 +146,16 @@ namespace Jeu_Carte
                     int debut = 0;
                     if (debut == 0)
                     {
-                        Console.WriteLine("suppression de 8 Cartes");
+                        //Console.WriteLine("suppression de 8 Cartes");
                         liste_u.RemoveRange(0, 8);
                     }
                 }
                 p_index++;
             }
+
+
+
+           
 
             /* APPEL DE LA FONCTION AFFICHAGE */
             //Affichage_liste_Joueur(jeu.Liste_Joueur);
@@ -148,8 +163,13 @@ namespace Jeu_Carte
             // LANCEMENT DU JEU
             jeu.ToString();
             Deroulement desk = new Deroulement(jeu);
-
+            Console.WriteLine("Première Carte sur le terrain : " + cartePeek());
             // Deroulement de la partie
+            // Joueur Aleatoire
+            chf = aleatoire.Next(0, jeu.Liste_Joueur.Count);
+            jr_debut = jeu.Liste_Joueur[chf];
+            idx = 0;
+            trouvee = cartePeek();
             while (!arret)
             {
                 findCarte(cartePeek());
@@ -160,44 +180,192 @@ namespace Jeu_Carte
 
         public static void findCarte(Carte terrain)
         {
-            int i = 0;
-            for (i = 0; i < jeu.Liste_Joueur.Count; i++)
+           
+            for (idx = 0; idx < jeu.Liste_Joueur.Count; idx++)
             {
+
                 List<Carte> echantillon = new List<Carte>();
-                for (int a = 0; a < jeu.Liste_Joueur[i].GetList_Carte().Count; a++)
+                // Si c'est le premier joueur
+                //int k = 0;
+                if (idx == 0)
                 {
-                    var r = jeu.Liste_Joueur[i].GetList_Carte()[a];
-                    if (r.GetColor() == terrain.GetColor())
+                    for (int a = 0; a < jr_debut.GetList_Carte().Count; a++)
                     {
-                        echantillon = new List<Carte>();
-                        echantillon.Add(r);
+                        Carte r = jr_debut.GetList_Carte()[a];
+                        // Vérifier si la couleur ou la valeur de la carte corresponde
+                        if (r.GetColor() == terrain.GetColor() || r.GetValeur_String() == terrain.GetValeur_String())
+                        {
+                            echantillon = new List<Carte>();
+                            echantillon.Add(r);
+                            trouvee = r;
+                        }
+                    }
+                }
+                else if (idx == 1 && jeu.Liste_Joueur[idx] == jr_debut)
+                {
+                    if (jeu.Liste_Joueur.Count == 2 || jeu.Liste_Joueur.Count == 3)
+                    {
+                        for (int a = 0; a < jeu.Liste_Joueur[idx - 1].GetList_Carte().Count; a++)
+                        {
+                            Carte r;
+                            r = jeu.Liste_Joueur[idx - 1].GetList_Carte()[a];
+                            // Vérifier si la couleur ou la valeur de la carte corresponde
+                            if (r.GetColor() == trouvee.GetColor() || r.GetValeur_String() == trouvee.GetValeur_String())
+                            {
+                                echantillon = new List<Carte>();
+                                echantillon.Add(r);
+                                trouvee = r;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int a = 0; a < jeu.Liste_Joueur[idx + 1].GetList_Carte().Count; a++)
+                        {
+                            Carte r;
+                            r = jeu.Liste_Joueur[idx + 1].GetList_Carte()[a];
+                            // Vérifier si la couleur ou la valeur de la carte corresponde
+                            if (r.GetColor() == trouvee.GetColor() || r.GetValeur_String() == trouvee.GetValeur_String())
+                            {
+                                echantillon = new List<Carte>();
+                                echantillon.Add(r);
+                                trouvee = r;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    for (int a = 0; a < jeu.Liste_Joueur[idx].GetList_Carte().Count; a++)
+                    {
+                        var r = jeu.Liste_Joueur[idx].GetList_Carte()[a];
+                        // Vérifier si la couleur ou la valeur de la carte corresponde
+                        if (r.GetColor() == trouvee.GetColor() || r.GetValeur_String() == trouvee.GetValeur_String())
+                        {
+                            echantillon = new List<Carte>();
+                            echantillon.Add(r);
+                            trouvee = r;
+                        }
+
                     }
                 }
                 // Si au moins une Carte a été ajoutée dans la liste echantillon
                 if (echantillon.Count >= 1)
                 {
                     int nbre = aleatoire.Next(0, echantillon.Count);
-                    Carte trouvee = echantillon[nbre];
+                    trouvee = echantillon[nbre];
                     Deroulement.cartesJouees.Add(trouvee); // Pose la carte sur le terrain de jeu
-                    Console.WriteLine(jeu.Liste_Joueur[i].GetNom() + " a joué la carte --> "
-                        + trouvee.ToString());
-                    jeu.Liste_Joueur[i].GetList_Carte().Remove(trouvee);
-                    // Verifier si c'est notre gagnant : il n'a plus de carte dans sa main 
-                    if (jeu.Liste_Joueur[i].IsWinner())
+                    /* TODO : Si la Carte jouee = 10 (changer le sens du jeu)
+                     * TODO : 
+                     */
+                    if (idx == 0)
                     {
-                        Console.WriteLine(jeu.Liste_Joueur[i].GetNom() + " a remporté la Partie !");
-                        arret = true;
-                        break; //On sort de la boucle for; donc on sort de la fonction
+                        Console.Write(jr_debut.GetNom() + " a joué la carte --> "
+                       + trouvee.ToString());
+                        jr_debut.GetList_Carte().Remove(trouvee);
+                        Console.WriteLine("\tTotal cartes en main: " + jr_debut.GetList_Carte().Count);
+                        if (jr_debut.IsWinner())
+                        {
+                            Console.WriteLine(jeu.Liste_Joueur[idx].GetNom() + " a remporté la Partie !");
+                            arret = true;
+                            break; //On sort de la boucle for; donc on sort de la fonction
+                        }
                     }
+                    else if (idx == 1 && jeu.Liste_Joueur[idx] == jr_debut)
+                    {
+                        int total = jeu.Liste_Joueur.Count;
+                        if (jeu.Liste_Joueur.Count == 2)
+                        {
+                            Console.Write(jeu.Liste_Joueur[total - idx].GetNom() + " a joué la carte --> "
+                        + trouvee.ToString());
+                            jeu.Liste_Joueur[total - idx].GetList_Carte().Remove(trouvee);
+                            Console.WriteLine("\tTotal cartes en main: " + jeu.Liste_Joueur[total - idx].GetList_Carte().Count);
+                            // Verifier si c'est notre gagnant : il n'a plus de carte dans sa main 
+                            if (jeu.Liste_Joueur[total - idx].IsWinner())
+                            {
+                                Console.WriteLine(jeu.Liste_Joueur[total - idx].GetNom() + " a remporté la Partie !");
+                                arret = true;
+                                break; //On sort de la boucle for; donc on sort de la fonction
+                            }
+                        }
+                        else
+                        {
+                            Console.Write(jeu.Liste_Joueur[idx - 1].GetNom() + " a joué la carte --> "
+                      + trouvee.ToString());
+                            jeu.Liste_Joueur[idx - 1].GetList_Carte().Remove(trouvee);
+                            Console.WriteLine("\tTotal cartes en main: " + jeu.Liste_Joueur[idx - 1].GetList_Carte().Count);
+                            // Verifier si c'est notre gagnant : il n'a plus de carte dans sa main 
+                            if (jeu.Liste_Joueur[idx].IsWinner())
+                            {
+                                Console.WriteLine(jeu.Liste_Joueur[idx - 1].GetNom() + " a remporté la Partie !");
+                                arret = true;
+                                break; //On sort de la boucle for; donc on sort de la fonction
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        Console.Write(jeu.Liste_Joueur[idx].GetNom() + " a joué la carte --> "
+                        + trouvee.ToString());
+                        jeu.Liste_Joueur[idx].GetList_Carte().Remove(trouvee);
+                        Console.WriteLine("\tTotal cartes en main: " + jeu.Liste_Joueur[idx].GetList_Carte().Count);
+                        // Verifier si c'est notre gagnant : il n'a plus de carte dans sa main 
+                        if (jeu.Liste_Joueur[idx].IsWinner())
+                        {
+                            Console.WriteLine(jeu.Liste_Joueur[idx].GetNom() + " a remporté la Partie !");
+                            arret = true;
+                            break; //On sort de la boucle for; donc on sort de la fonction
+                        }
+                    }
+
                 }
                 else
                 {
-                    // La methode pour la poiche d'une carte et l'ajouter dans la main du joueur
-                    Carte nouvelleCarte = poiche();
-                    jeu.Liste_Joueur[i].GetList_Carte().Add(nouvelleCarte);
-                    Console.WriteLine(jeu.Liste_Joueur[i].GetNom() + " a poiché une carte --> " 
-                        + nouvelleCarte + " Total cartes en main: " + jeu.Liste_Joueur[i].GetList_Carte().Count);
+                    if (idx == 0)
+                    {
+                        // La methode pour la poiche d'une carte et l'ajouter dans la main du joueur
+                        Carte nouvelleCarte = poiche();
+                        jr_debut.GetList_Carte().Add(nouvelleCarte);
+                        Console.WriteLine(jr_debut.GetNom() + " a poiché une carte --> "
+                            + nouvelleCarte + " Total cartes en main: " + jr_debut.GetList_Carte().Count);
+                        evolution_jr(jr_debut);//affiche sa main
+                    }
+                    else if (idx == 1 && jeu.Liste_Joueur[idx] == jr_debut)
+                    {
+                        if (jeu.Liste_Joueur.Count == 2)
+                        {
+                            int total = jeu.Liste_Joueur.Count;
+                            // La methode pour la poiche d'une carte et l'ajouter dans la main du joueur
+                            Carte nouvelleCarte = poiche();
+                            jeu.Liste_Joueur[total - idx].GetList_Carte().Add(nouvelleCarte);
+                            Console.WriteLine(jeu.Liste_Joueur[total - idx].GetNom() + " a poiché une carte --> "
+                                + nouvelleCarte + " Total cartes en main: " + jeu.Liste_Joueur[total - idx].GetList_Carte().Count);
+                            evolution_jr(jeu.Liste_Joueur[total - idx]);//affiche sa main
+                        }
+                        else
+                        {
+                            // La methode pour la poiche d'une carte et l'ajouter dans la main du joueur
+                            Carte nouvelleCarte = poiche();
+                            jeu.Liste_Joueur[idx].GetList_Carte().Add(nouvelleCarte);
+                            Console.WriteLine(jeu.Liste_Joueur[idx].GetNom() + " a poiché une carte --> "
+                                + nouvelleCarte + " Total cartes en main: " + jeu.Liste_Joueur[idx].GetList_Carte().Count);
+                            evolution_jr(jeu.Liste_Joueur[idx]);//affiche sa main
+                        }
+
+                    }
+                    else
+                    {
+                        // La methode pour la poiche d'une carte et l'ajouter dans la main du joueur
+                        Carte nouvelleCarte = poiche();
+                        jeu.Liste_Joueur[idx].GetList_Carte().Add(nouvelleCarte);
+                        Console.WriteLine(jeu.Liste_Joueur[idx].GetNom() + " a poiché une carte --> "
+                            + nouvelleCarte + " Total cartes en main: " + jeu.Liste_Joueur[idx].GetList_Carte().Count);
+                        evolution_jr(jeu.Liste_Joueur[idx]);//affiche sa main
+                    }
+
                 }
+                // k++;
             }
         }
 
@@ -237,7 +405,7 @@ namespace Jeu_Carte
                         Deroulement.cartesJouees.Remove(brassee);
                     }
                 }
-              
+
             }
 
             int chiffre_hasard = aleatoire.Next(0, Carte.paquet.Count);
@@ -262,7 +430,7 @@ namespace Jeu_Carte
         /** FONCTION Affichage_liste_Joueur : Affiche une liste contenant tous les joueurs dont possedent une Partie du jeu */
         public static void Affichage_Caracteristique_Joueur(Joueur player)
         {
-            bool retour = jeu.Liste_Joueur.Contains(player);
+
             Console.WriteLine("\nAffichage des Caracteristiques du Joueur : ");
             Console.WriteLine("\tNom : " + player.GetNom()
                 + "\n\tPrenom : " + player.GetPrenom()
@@ -278,6 +446,15 @@ namespace Jeu_Carte
                 Affichage_Caracteristique_Joueur(jr);
                 Console.WriteLine(); //Aérer le code
             }
+        }
+        public static void evolution_jr(Joueur player)
+        {
+            Console.WriteLine("===========================================================");
+            int position = jeu.Liste_Joueur.IndexOf(player);
+            Console.WriteLine("\t\t\tNom : " + player.GetNom()
+               + "\n\t\t\tPrenom : " + player.GetPrenom()
+               + "\nCartes : " + jeu.Liste_Joueur[position].GetList_Carte_s());
+            Console.WriteLine("===========================================================");
         }
 
     }
