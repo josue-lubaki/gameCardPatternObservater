@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{70E0BA00-8FDF-4A8E-B286-5CDDBB5DA046}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Partie.cs">
+    <Files>
+      <File FileName="Index.cs" Line="74" Column="29" />
+      <File FileName="Joueur.cs" Line="22" Column="28" />
+      <File FileName="Partie.cs" Line="38" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Jeu_Carte" expanded="True">
+            <Node name="Jeu_Carte" expanded="True">
+              <Node name="Partie.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Jeu__Carte PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

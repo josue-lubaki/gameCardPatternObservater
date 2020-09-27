@@ -1,0 +1,4 @@
+/Users/ila/Documents/classes/Concepts avances en Objet/inf1035-tp1/obj/Debug/netcoreapp3.1/inf1035-tp1.csprojAssemblyReference.cache
+/Users/ila/Documents/classes/Concepts avances en Objet/inf1035-tp1/obj/Debug/netcoreapp3.1/inf1035-tp1.AssemblyInfoInputs.cache
+/Users/ila/Documents/classes/Concepts avances en Objet/inf1035-tp1/obj/Debug/netcoreapp3.1/inf1035-tp1.AssemblyInfo.cs
+/Users/ila/Documents/classes/Concepts avances en Objet/inf1035-tp1/obj/Debug/netcoreapp3.1/inf1035-tp1.csproj.CoreCompileInputs.cache

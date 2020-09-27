@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 /*==================================================================================================
  *                          @Authors : Josue Lubaki & Ismael Coulibaly 
@@ -13,6 +14,10 @@ namespace Jeu_Carte
         // Liste vide de Joueur qui nous servira d'initialisation lors de la création d'une instance Partie
         private static List<Joueur> list_jr_ = new List<Joueur>();
         private static Partie jeu;
+        
+
+
+        
         static void Main(string[] args)
         {
             /* Liste contenant les cartes randomisées, et faire, pour user_1 prendre les cartes de 0 à 7
@@ -45,7 +50,7 @@ namespace Jeu_Carte
              * 
              *  ===> (code P2) <=== ci-bas
              */
-            int cpt = 1;
+            int cpt = 1;//compteur permettant d'executer la boucle while le nombre de fois qu'il faut. càd autant que le nombre de participant
             while (cpt <= nbre_participant)
             {
                 for (int t = 0; t < 8; t++)
@@ -142,7 +147,17 @@ namespace Jeu_Carte
 
             // LANCEMENT DU JEU
             jeu.ToString();
+
+
+            
+
         }
+
+        
+       
+
+
+
 
         /** FONCTION affichage_liste_carte : Affiche une liste contenant toutes les cartes dont possedent un Joueur */
         public static void affichage_liste_carte(List<Carte> list)
