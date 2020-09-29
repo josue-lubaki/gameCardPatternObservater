@@ -1,16 +1,18 @@
 ﻿<Properties StartupConfiguration="{70E0BA00-8FDF-4A8E-B286-5CDDBB5DA046}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Partie.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Carte.cs">
     <Files>
-      <File FileName="Index.cs" Line="74" Column="29" />
-      <File FileName="Joueur.cs" Line="22" Column="28" />
-      <File FileName="Partie.cs" Line="38" Column="10" />
+      <File FileName="Index.cs" Line="167" Column="1" />
+      <File FileName="Partie.cs" Line="37" Column="1" />
+      <File FileName="Personne.cs" Line="30" Column="1" />
+      <File FileName="Joueur.cs" Line="25" Column="1" />
+      <File FileName="Carte.cs" Line="117" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Jeu_Carte" expanded="True">
             <Node name="Jeu_Carte" expanded="True">
-              <Node name="Partie.cs" selected="True" />
+              <Node name="Carte.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -24,7 +26,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Jeu__Carte PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/ila/Documents/classes/Concepts avances en Objet/inf1035-tp1/Jeu_Carte/Partie.cs" relfile="Partie.cs" line="85" column="1" />
+      <Breakpoint file="/Users/ila/Documents/classes/Concepts avances en Objet/inf1035-tp1/Jeu_Carte/Partie.cs" relfile="Partie.cs" line="89" column="1" />
+      <Breakpoint file="/Users/ila/Documents/classes/Concepts avances en Objet/inf1035-tp1/Jeu_Carte/Partie.cs" relfile="Partie.cs" line="109" column="1" />
+      <Breakpoint file="/Users/ila/Documents/classes/Concepts avances en Objet/inf1035-tp1/Jeu_Carte/Partie.cs" relfile="Partie.cs" line="56" column="1" />
+      <Breakpoint file="/Users/ila/Documents/classes/Concepts avances en Objet/inf1035-tp1/Jeu_Carte/Partie.cs" relfile="Partie.cs" line="38" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
