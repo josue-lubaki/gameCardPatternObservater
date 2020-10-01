@@ -35,7 +35,7 @@ namespace Jeu_Carte
 
 
         //METHODE QUI VA LANCER LE JEU
-        private void Play()
+        public void Play()
         {
             
             //On remplit la pioche avec le reste des cartes non distribués au joueur (cartes dans le paquet)
@@ -43,14 +43,14 @@ namespace Jeu_Carte
 
 
 
-            /* for (int k = 0; k < Carte.paquet.Count; k++)
+             for (int k = 0; k < Carte.paquet.Count; k++)
                {
                    pioche.Add(Carte.paquet[k]);
                    Console.WriteLine($"           {pioche[k]}");
 
                }
-               Console.WriteLine($"Il y a {pioche.Count} cartes restantes dans la pioche");*/
-            pioche = Carte.paquet;
+            Console.WriteLine($"Il y a {pioche.Count} cartes restantes dans la pioche");
+           // pioche = Carte.paquet;
 
             //******** un joueur est choisi aléatoirement pour commencer la partie***********
             //
@@ -114,6 +114,7 @@ namespace Jeu_Carte
             Console.Write(output);
             Index.affichage_liste_Joueur(Liste_Joueur);
             Play();
+
             return ("==================================================================================");
 
         }
