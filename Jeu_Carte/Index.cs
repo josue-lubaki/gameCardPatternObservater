@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-/*==================================================================================================
- *                          @Authors : Josue Lubaki & Ismael Coulibaly 
+﻿/*==================================================================================================
+ *                          @Authors : Josue Lubaki & Ismael Coulibaly
  *==================================================================================================*/
+using System;
+using System.Collections.Generic;
 namespace Jeu_Carte
 {
 
@@ -31,21 +31,7 @@ namespace Jeu_Carte
             * ===> (code P1) <=== ci-bas
             */
             List<Carte> liste_u = new List<Carte>();
-
-
-
-            // Creation de 52 Cartes du Jeu
-            for (int i = 1; i <= 13; i++)
-            {
-                for (int j = 1; j < 5; j++)
-                {
-                    Carte modele = new Carte(i, j);
-                    Carte.paquet.Add(modele);
-                }
-            }
-
-
-
+            Partie.initialisationCarte();
 
             // première Carte posée sur la table de Jeu
             int number = aleatoire.Next(0, Carte.paquet.Count);
@@ -66,7 +52,7 @@ namespace Jeu_Carte
                     nbre_participant = Convert.ToInt32(Console.ReadLine());
                 } while (nbre_participant < 2 || nbre_participant > 4);
 
-                /* La Boucle While() est censée créer 8 Cartes d'une manière aléatoire associées 
+            /* La Boucle While() est censée créer 8 Cartes d'une manière aléatoire associées 
              * à chaque Joueur(nbre_participant).
              * Ainsi donc si nous avons 2 joueurs, alors liste_u.Count = 16 Cartes puisque le while() s'éxécutera deux fois
              * Ainsi donc si nous avons 3 joueurs, alors liste_u.Count = 24 Cartes puisque le while() s'éxécutera trois fois
@@ -155,7 +141,7 @@ namespace Jeu_Carte
 
 
 
-           
+
 
             /* APPEL DE LA FONCTION AFFICHAGE */
             //Affichage_liste_Joueur(jeu.Liste_Joueur);
@@ -180,7 +166,7 @@ namespace Jeu_Carte
 
         public static void findCarte(Carte terrain)
         {
-           
+
             for (idx = 0; idx < jeu.Liste_Joueur.Count; idx++)
             {
 

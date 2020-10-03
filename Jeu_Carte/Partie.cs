@@ -26,7 +26,19 @@ namespace Jeu_Carte
             set { liste_Joueur = value; }
         }
 
-        public void ToString()
+        public static void initialisationCarte()
+        {
+            // Creation de 52 Cartes du Jeu
+            for (int i = 1; i <= 13; i++)
+            {
+                for (int j = 1; j < 5; j++)
+                {
+                    Carte modele = new Carte(i, j);
+                    Carte.paquet.Add(modele);
+                }
+            }
+        }
+public void ToString()
         {
             var output = "\t\tNotre Partie de Jeu comprend " + Nbre_Joueur + " Joueurs\n" +
                 "Bienvenues à nos Joueurs :\n";

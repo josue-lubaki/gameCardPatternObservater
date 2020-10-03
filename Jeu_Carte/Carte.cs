@@ -110,8 +110,8 @@ namespace Jeu_Carte
         {
             color = value;
         }
-
-        public override string ToString()
+        
+public override string ToString()
         {
             string output = null;
             output = "[" + GetValeur_String() + "|" + GetColor() + "]";

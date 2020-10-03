@@ -11,3 +11,14 @@ C:\Users\MBIKAYI\Desktop\Fadel\Jeu_Carte\obj\Debug\netcoreapp3.1\Jeu_Carte.dll
 C:\Users\MBIKAYI\Desktop\Fadel\Jeu_Carte\obj\Debug\netcoreapp3.1\Jeu_Carte.pdb
 C:\Users\MBIKAYI\Desktop\Fadel\Jeu_Carte\obj\Debug\netcoreapp3.1\Jeu_Carte.genruntimeconfig.cache
 C:\Users\MBIKAYI\Desktop\Fadel\Jeu_Carte\obj\Debug\netcoreapp3.1\Jeu_Carte.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\inf1035-tp1\inf1035-tp1\Jeu_Carte\bin\Debug\netcoreapp3.1\Jeu_Carte.exe
+C:\Users\PC\Desktop\inf1035-tp1\inf1035-tp1\Jeu_Carte\bin\Debug\netcoreapp3.1\Jeu_Carte.deps.json
+C:\Users\PC\Desktop\inf1035-tp1\inf1035-tp1\Jeu_Carte\bin\Debug\netcoreapp3.1\Jeu_Carte.runtimeconfig.json
+C:\Users\PC\Desktop\inf1035-tp1\inf1035-tp1\Jeu_Carte\bin\Debug\netcoreapp3.1\Jeu_Carte.runtimeconfig.dev.json
+C:\Users\PC\Desktop\inf1035-tp1\inf1035-tp1\Jeu_Carte\bin\Debug\netcoreapp3.1\Jeu_Carte.dll
+C:\Users\PC\Desktop\inf1035-tp1\inf1035-tp1\Jeu_Carte\bin\Debug\netcoreapp3.1\Jeu_Carte.pdb
+C:\Users\PC\Desktop\inf1035-tp1\inf1035-tp1\Jeu_Carte\obj\Debug\netcoreapp3.1\Jeu_Carte.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\inf1035-tp1\inf1035-tp1\Jeu_Carte\obj\Debug\netcoreapp3.1\Jeu_Carte.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\inf1035-tp1\inf1035-tp1\Jeu_Carte\obj\Debug\netcoreapp3.1\Jeu_Carte.AssemblyInfo.cs
+C:\Users\PC\Desktop\inf1035-tp1\inf1035-tp1\Jeu_Carte\obj\Debug\netcoreapp3.1\Jeu_Carte.dll
+C:\Users\PC\Desktop\inf1035-tp1\inf1035-tp1\Jeu_Carte\obj\Debug\netcoreapp3.1\Jeu_Carte.pdb
