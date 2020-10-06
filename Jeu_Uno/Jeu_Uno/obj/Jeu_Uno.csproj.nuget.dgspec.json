@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\OneDrive\\UQTR\\Jeu_Uno_vfa\\Jeu_Uno\\Jeu_Uno\\Jeu_Uno.csproj": {}
+    "C:\\Users\\ila MBP win\\Desktop\\inf1035-tp1\\Jeu_Uno\\Jeu_Uno\\Jeu_Uno.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\OneDrive\\UQTR\\Jeu_Uno_vfa\\Jeu_Uno\\Jeu_Uno\\Jeu_Uno.csproj": {
+    "C:\\Users\\ila MBP win\\Desktop\\inf1035-tp1\\Jeu_Uno\\Jeu_Uno\\Jeu_Uno.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\OneDrive\\UQTR\\Jeu_Uno_vfa\\Jeu_Uno\\Jeu_Uno\\Jeu_Uno.csproj",
+        "projectUniqueName": "C:\\Users\\ila MBP win\\Desktop\\inf1035-tp1\\Jeu_Uno\\Jeu_Uno\\Jeu_Uno.csproj",
         "projectName": "Jeu_Uno",
-        "projectPath": "C:\\Users\\PC\\OneDrive\\UQTR\\Jeu_Uno_vfa\\Jeu_Uno\\Jeu_Uno\\Jeu_Uno.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\OneDrive\\UQTR\\Jeu_Uno_vfa\\Jeu_Uno\\Jeu_Uno\\obj\\",
+        "projectPath": "C:\\Users\\ila MBP win\\Desktop\\inf1035-tp1\\Jeu_Uno\\Jeu_Uno\\Jeu_Uno.csproj",
+        "packagesPath": "C:\\Users\\ila MBP win\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ila MBP win\\Desktop\\inf1035-tp1\\Jeu_Uno\\Jeu_Uno\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ila MBP win\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -62,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

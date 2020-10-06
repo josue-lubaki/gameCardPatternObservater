@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Jeu_Uno.Activity" Collapsed="true">
+    <Position X="1.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAACABAAIAABAABAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Classe\Activity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jeu_Uno.Carte" Collapsed="true">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAggAAAAAAAEAAAAAAAAAAAAACCAAAAAgAAAAAA=</HashCode>
+      <FileName>Classe\Carte.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jeu_Uno.Joueur" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAEAAgAAAAAEAAAAIAAAACAAIAAAAGAAAAAAAAA=</HashCode>
+      <FileName>Classe\Joueur.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Jeu_Uno.Partie" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="1.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACBAAASAAAAACAAAAAAEAAQIBAAAABAAAAIAAQAAQA=</HashCode>
+      <FileName>Classe\Partie.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Jeu_Uno.Program" Collapsed="true">
+    <Position X="1.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAAAABA=</HashCode>
+      <FileName>Classe\Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jeu_Uno.Classe.PileDeJeu" Collapsed="true">
+    <Position X="3.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAkgAAAAAAAAAAAAACAAAAIAABAAAAACAA=</HashCode>
+      <FileName>Classe\PileDeJeu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jeu_Uno.Classe.PileDePioche" Collapsed="true">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAkgAAAAAAAAAAgAACAAEAIAABAAAAACAA=</HashCode>
+      <FileName>Classe\PileDePioche.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.EventArgs" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="6.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="Jeu_Uno.IObserver" Collapsed="true">
+    <Position X="1.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IObserver.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Jeu_Uno.ISubject" Collapsed="true">
+    <Position X="3.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\ISubject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Jeu_Uno.Color" Collapsed="true">
+    <Position X="1.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgRAAACAA=</HashCode>
+      <FileName>Classe\Carte.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
