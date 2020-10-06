@@ -5539,11 +5539,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\OneDrive\\UQTR\\Jeu_Uno\\Jeu_Uno\\Jeu_Uno.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\OneDrive\\UQTR\\Jeu_Uno_vfa\\Jeu_Uno\\Jeu_Uno\\Jeu_Uno.csproj",
       "projectName": "Jeu_Uno",
-      "projectPath": "C:\\Users\\PC\\OneDrive\\UQTR\\Jeu_Uno\\Jeu_Uno\\Jeu_Uno.csproj",
+      "projectPath": "C:\\Users\\PC\\OneDrive\\UQTR\\Jeu_Uno_vfa\\Jeu_Uno\\Jeu_Uno\\Jeu_Uno.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\OneDrive\\UQTR\\Jeu_Uno\\Jeu_Uno\\obj\\",
+      "outputPath": "C:\\Users\\PC\\OneDrive\\UQTR\\Jeu_Uno_vfa\\Jeu_Uno\\Jeu_Uno\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
