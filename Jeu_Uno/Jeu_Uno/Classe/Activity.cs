@@ -39,8 +39,8 @@ namespace Jeu_Uno
             return carte_dessus;
         }
 
-        
-       
+
+
         public static void Distribution()
         {
             int cpt = 1;
