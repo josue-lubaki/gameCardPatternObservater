@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inf1035-tp1-final", "Inf1035-tp1-final\Inf1035-tp1-final.csproj", "{34876AD0-701F-4149-AE90-53FD5F0688F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34876AD0-701F-4149-AE90-53FD5F0688F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34876AD0-701F-4149-AE90-53FD5F0688F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34876AD0-701F-4149-AE90-53FD5F0688F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34876AD0-701F-4149-AE90-53FD5F0688F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

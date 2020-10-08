@@ -1,0 +1,12 @@
+/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/bin/Debug/netcoreapp3.1/Inf1035-tp1-final.deps.json
+/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/bin/Debug/netcoreapp3.1/Inf1035-tp1-final.runtimeconfig.json
+/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/bin/Debug/netcoreapp3.1/Inf1035-tp1-final.runtimeconfig.dev.json
+/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/bin/Debug/netcoreapp3.1/Inf1035-tp1-final.dll
+/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/bin/Debug/netcoreapp3.1/Inf1035-tp1-final.pdb
+/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/obj/Debug/netcoreapp3.1/Inf1035-tp1-final.csprojAssemblyReference.cache
+/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/obj/Debug/netcoreapp3.1/Inf1035-tp1-final.AssemblyInfoInputs.cache
+/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/obj/Debug/netcoreapp3.1/Inf1035-tp1-final.AssemblyInfo.cs
+/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/obj/Debug/netcoreapp3.1/Inf1035-tp1-final.csproj.CoreCompileInputs.cache
+/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/obj/Debug/netcoreapp3.1/Inf1035-tp1-final.dll
+/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/obj/Debug/netcoreapp3.1/Inf1035-tp1-final.pdb
+/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/obj/Debug/netcoreapp3.1/Inf1035-tp1-final.genruntimeconfig.cache

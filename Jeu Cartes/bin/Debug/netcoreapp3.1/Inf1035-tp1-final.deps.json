@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Inf1035-tp1-final/1.0.0": {
+        "runtime": {
+          "Inf1035-tp1-final.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Inf1035-tp1-final/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
