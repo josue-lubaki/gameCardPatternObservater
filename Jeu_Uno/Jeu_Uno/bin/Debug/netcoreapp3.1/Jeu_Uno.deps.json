@@ -835,7 +835,14 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.7.0": {},
+      "System.Runtime.CompilerServices.Unsafe/4.7.0": {
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "4.0.6.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        }
+      },
       "System.Runtime.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.2",

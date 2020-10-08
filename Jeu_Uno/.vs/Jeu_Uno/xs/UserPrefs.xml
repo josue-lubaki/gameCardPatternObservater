@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{9BD0409F-85E4-460C-85A2-3750B81FB3A4}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Jeu_Uno/Classe/Partie.cs">
+    <Files>
+      <File FileName="Jeu_Uno/Classe/Program.cs" Line="17" Column="1" />
+      <File FileName="Jeu_Uno/Classe/Partie.cs" Line="7" Column="69" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Jeu_Uno" expanded="True">
+            <Node name="Jeu_Uno" expanded="True">
+              <Node name="Classe" expanded="True">
+                <Node name="Partie.cs" selected="True" />
+              </Node>
+              <Node name="Interface" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Jeu__Uno PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
