@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ila/Documents/classes/Concepts/inf1035-tp1/Jeu_Uno/Jeu_Uno/Jeu_Uno.csproj": {}
+    "/Users/ila/Desktop/Jeu_Uno/Jeu_Uno/Jeu_Uno.csproj": {}
   },
   "projects": {
-    "/Users/ila/Documents/classes/Concepts/inf1035-tp1/Jeu_Uno/Jeu_Uno/Jeu_Uno.csproj": {
+    "/Users/ila/Desktop/Jeu_Uno/Jeu_Uno/Jeu_Uno.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ila/Documents/classes/Concepts/inf1035-tp1/Jeu_Uno/Jeu_Uno/Jeu_Uno.csproj",
+        "projectUniqueName": "/Users/ila/Desktop/Jeu_Uno/Jeu_Uno/Jeu_Uno.csproj",
         "projectName": "Jeu_Uno",
-        "projectPath": "/Users/ila/Documents/classes/Concepts/inf1035-tp1/Jeu_Uno/Jeu_Uno/Jeu_Uno.csproj",
+        "projectPath": "/Users/ila/Desktop/Jeu_Uno/Jeu_Uno/Jeu_Uno.csproj",
         "packagesPath": "/Users/ila/.nuget/packages/",
-        "outputPath": "/Users/ila/Documents/classes/Concepts/inf1035-tp1/Jeu_Uno/Jeu_Uno/obj/",
+        "outputPath": "/Users/ila/Desktop/Jeu_Uno/Jeu_Uno/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ila/.config/NuGet/NuGet.Config"

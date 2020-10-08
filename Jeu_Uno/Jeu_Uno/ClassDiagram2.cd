@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Jeu_Uno.Activity">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAASACAAAAAAAAAAEAAAIBAAAEAAAAAAAAAEgQA=</HashCode>
+      <FileName>Classe\Activity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jeu_Uno.Carte">
+    <Position X="3.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgAAAAAAAAEgAAAAAAAAAAABKCAAAAAgAAAAiA=</HashCode>
+      <FileName>Classe\Carte.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jeu_Uno.Joueur">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="Jeu_Uno.Joueur.EventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Classe\Joueur.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <AssociationLine Name="carteEnMain" Type="Jeu_Uno.Carte">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.165" Y="0.294" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAEAAAAIAAAEGAAIAAAgCAAAAAAAAA=</HashCode>
+      <FileName>Classe\Joueur.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="carteEnMain" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Jeu_Uno.Partie">
+    <Position X="1" Y="1" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="14.75" Y="3.25" />
+        <Point X="14.75" Y="3.343" />
+        <Point X="14.45" Y="3.343" />
+        <Point X="14.45" Y="4.617" />
+        <Point X="4.99" Y="4.617" Type="JumpStart" />
+        <Point X="4.823" Y="4.617" Type="JumpEnd" />
+        <Point X="1.75" Y="4.617" />
+        <Point X="1.75" Y="3.968" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAACAASAAAAIAAAAAAAAAAQAAEAAAAAAAAIAAAACAA=</HashCode>
+      <FileName>Classe\Partie.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="listeJoueur" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Jeu_Uno.Program" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.5" Y="3.562" />
+        <Point X="15.5" Y="3.941" />
+        <Point X="14.533" Y="3.941" Type="JumpStart" />
+        <Point X="14.367" Y="3.941" Type="JumpEnd" />
+        <Point X="11.5" Y="3.941" />
+        <Point X="11.5" Y="3.812" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAAAABA=</HashCode>
+      <FileName>Classe\Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jeu_Uno.DepotEtPiocheEvent">
+    <Position X="11.75" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="System.EventArgs" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.5" Y="1.312" />
+        <Point X="15.5" Y="1.636" />
+        <Point X="13.25" Y="1.636" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAA=</HashCode>
+      <FileName>Events\DepotEtPiocheEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jeu_Uno.Classe.PileDeJeu">
+    <Position X="12.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAkgAAAAAAAAAAAAACAEAAIAABAAAAACAA=</HashCode>
+      <FileName>Classe\PileDeJeu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="Desk" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Jeu_Uno.Classe.PileDePioche">
+    <Position X="9.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAkgAAAAAAAAAAgAACAAEAIAABAAAAACAA=</HashCode>
+      <FileName>Classe\PileDePioche.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="pioche" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Jeu_Uno.Enumeration.GestionEnum" Collapsed="true">
+    <Position X="14.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Enumeration\GestionEnum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="14.75" Y="3" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.EventArgs" Collapsed="true">
+    <Position X="14.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
