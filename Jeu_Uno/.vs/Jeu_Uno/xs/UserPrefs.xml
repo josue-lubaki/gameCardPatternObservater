@@ -1,19 +1,13 @@
 ﻿<Properties StartupConfiguration="{9BD0409F-85E4-460C-85A2-3750B81FB3A4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Jeu_Uno/Classe/PileDePioche.cs">
-    <Files>
-      <File FileName="Jeu_Uno/Classe/Program.cs" Line="23" Column="37" />
-      <File FileName="Jeu_Uno/Classe/Partie.cs" Line="1" Column="1" />
-      <File FileName="Jeu_Uno/Classe/Activity.cs" Line="68" Column="13" />
-      <File FileName="Jeu_Uno/Classe/PileDePioche.cs" Line="54" Column="13" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Jeu_Uno" expanded="True">
             <Node name="Jeu_Uno" expanded="True">
-              <Node name="Classe" expanded="True">
-                <Node name="PileDePioche.cs" selected="True" />
-              </Node>
+              <Node name="Dependencies" expanded="True" selected="True" />
+              <Node name="Enumeration" expanded="True" />
+              <Node name="Events" expanded="True" />
             </Node>
           </Node>
         </State>
