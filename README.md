@@ -1,7 +1,7 @@
 --> lien du projet: https://dmigit.uqtr.ca/coulibai/inf1035-tp1
 
-Xuyao Hu
-Josue Lubaki
+Xuyao Hu &
+Josue Lubaki&
 Ismael Coulibaly
 
 
