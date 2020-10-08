@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 /*========================================================================== */
 /*          @Authors : Josue Lubaki & Ismael Coulibaly & Xuyao Hu           */
 /*==========================================================================*/
 namespace Jeu_Uno.Classe
 {
-    /** PILEDEJEU.cs : implementer à partir du stack, donc ayant acces à toutes les methodes de la pile Stack [LIFO] */
+    /** PILEDEJEU.cs : implementer à partir du Stack, donc ayant acces à toutes les methodes de la pile Stack [LIFO] */
     class PileDeJeu
     {
         private readonly Stack<Carte> Desk = new Stack<Carte>();

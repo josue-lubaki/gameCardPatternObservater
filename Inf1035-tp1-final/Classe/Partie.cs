@@ -8,39 +8,32 @@ using System.Threading.Tasks;
 /*==========================================================================*/
 namespace Jeu_Uno
 {
-    /** PARTIE.cs : Cette classe comporte 4 methodes essentielles pour gérer une partie, des methodes telles que : 
-     * @see Participer() : Qui fait participer (inscrit) un joueur dans la Partie et reçoit en paramètre une instance de l'interface IObserver
-     * @see Notify() : methode qui notifie à tous les observeurs inscrits dans la liste _obsevers, toutes modifications (varable, methode,...) de  la classe Partie.cs
-     * @see JoueurCommence() : methone Asynchrone du type LinkedListNoeud qui la lance la partie avec le premier joueur [Choisie Aléatoirement]
-     * @see DebutPartie() : methode qui reçoit en param une instance de l'interface IObserver et qui fait jouer tous les joueurs jusqu'au Gagnant. Et Lance la partie...
+    /** PARTIE.cs : Cette classe comporte 2 methodes hors du commun pour gérer une partie, des methodes telles que : 
+     * @see choixAlea() qui rendomiser la liste de Joueur pour trouver celui qui commencera la partie
+     * @see LancerPartie() qui essentiellement distribue 8 cartes à chaque Joueur inscrit
      */
     class Partie
     {
-        private static readonly Random aleatoire = new Random();
         public static Carte topCarte;
-        public static LinkedList<Joueur> listeJoueur = new LinkedList<Joueur>();
         private Activity jeu_Uno;
         public Partie(LinkedList<Joueur> listeJoueur)
         {
             jeu_Uno = new Activity();
-            Partie.listeJoueur = listeJoueur;
+            Partie.ListeJoueur = listeJoueur;
             choixAlea();
         }
-        public static LinkedList<Joueur> ListeJoueur
-        {
-            get { return listeJoueur; }
-        }
-       
+        public static LinkedList<Joueur> ListeJoueur { get; private set; } = new LinkedList<Joueur>();
+
         public Carte TopCarte
         {
             get { return topCarte; }
             set { topCarte = value; }
         }
-        public static void choixAlea()
+        public static async void choixAlea()
         {
             LinkedList<Joueur> meilleurListeJoueur = new LinkedList<Joueur>();
             List<Joueur> participant = new List<Joueur>();
-            foreach (var item in listeJoueur)
+            foreach (var item in ListeJoueur)
             {
                 participant.Add(item);
             }
@@ -51,28 +44,29 @@ namespace Jeu_Uno
                 meilleurListeJoueur.AddLast(s);
                 participant.Remove(s);
             }
-            listeJoueur = meilleurListeJoueur;
+            ListeJoueur = meilleurListeJoueur;
+            await Task.Delay(1200);
         }
 
         public async void LancerPartie()
         {
             int count = 0;
-            Console.WriteLine("\t\t---> !!! La partie est Lancée !!! <---");
-            Console.WriteLine("*******************************************************");
-            foreach (Joueur joueur in listeJoueur)
+            Console.WriteLine("\t\t\t\t\t▒▒▒▒▒ LA PARTIE EST LANCÉE ▒▒▒▒\n\n");
+            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+            foreach (Joueur joueur in ListeJoueur)
             {
                 Thread.Sleep(500);
                 jeu_Uno.ParticiperPartie(joueur);
                 joueur.CartesEnMain = jeu_Uno.DistributionCarte();
-                Console.WriteLine(joueur.ToString() + " s'est inscrit à la partie !");
+                Console.WriteLine("====>\t" + joueur.ToString() + " s'est inscrit à la partie !");
                 count++;
                 await Task.Delay(1200);
             }
-            Console.WriteLine("*******************************************************");
+            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
             
             while (true)
             {
-                foreach (Joueur joueur1 in listeJoueur)
+                foreach (Joueur joueur1 in ListeJoueur)
                 {
                     joueur1.Play();
                     await Task.Delay(800);

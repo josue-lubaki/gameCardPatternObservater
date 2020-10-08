@@ -42,6 +42,14 @@ namespace Jeu_Uno
             get { return carteEnMain; }
             set { carteEnMain = value; }
         }
+        public void Listing()
+        {
+            foreach (var item in CartesEnMain)
+            {
+                Console.Write(item + "════");
+            }
+            Console.WriteLine();
+        }
         // Evenement du type asynchrone qui censé faire jouer chacun de joueur
         public async void Play()
         {

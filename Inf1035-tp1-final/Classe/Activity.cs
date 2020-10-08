@@ -11,10 +11,11 @@ namespace Jeu_Uno
      * Préparer les 52 Cartes du jeu [@see Constructor],
      * Piochée une carte dans la Pile reservée à la pioche [@see pioche()], Remplir la pile de pioche quans celle-ci est vide [@see RemplirPilePioche()]
      * Distribuer les cartes au joueur en debut de jeu et informer à chaque joueur qu'il s'agit de son tour
+     * @see RemplirPilePioche() qui permet de remplir la pile de pioche lorsqu'elle vide
+     * @see DebutPartie() utilise l'evenement, ce qui permet à chaque joueur de voir la carte qui correspond au mieux avec celle qui est sur le terrain de jeu
      */
     class Activity : EventArgs
     {
-        private static Random aleatoire = new Random();
         public static PileDePioche pileDePioche = new PileDePioche(52);
         public static PileDeJeu tableDeJeu = new PileDeJeu(52);
         public static Carte topCarte;
@@ -33,7 +34,6 @@ namespace Jeu_Uno
             }
             //Brasser Les Cartes du jeu
             pileDePioche.BrasserCarte();
-          
         }
         public PileDePioche PileDePioches
         {
@@ -52,19 +52,28 @@ namespace Jeu_Uno
         {
             player.Handlers += DebutPartie;
         }
-        private void pioche(DepotEtPiocheEvent e)//la methode de pioche
+
+        //la methode qui permet au Joueur de pioché
+        private void pioche(DepotEtPiocheEvent e)
         {
-            Console.WriteLine("\n" + e.Joueur.Value.Prenom + " a Poiché la carte " + pileDePioche.Peek().ToString()
-                       + "\tNbre Carte en main : " + e.Joueur.Value.CartesEnMain.Count + "\n");
+            Console.WriteLine("------------------------------- Pile de jeu : " + topCarte);
             e.Joueur.Value.CartesEnMain.Add(pileDePioche.Peek());
+            Console.WriteLine(e.Joueur.Value.Prenom + " a Pioché la carte " + pileDePioche.Peek().ToString()
+                       + "\t\tNbre Carte en main : " + e.Joueur.Value.CartesEnMain.Count);
             pileDePioche.Pop();
+            e.Joueur.Value.Listing();
+            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
             if (pileDePioche.IsNull())
+            {
+                Console.WriteLine("\n\t\t╬╬╬╬╬╬╬ ATTENTION !!! LA PILE DE PIOCHE EST VIDE ╬╬╬╬╬╬╬\n");
                 RemplirPilePioche();
+            }
         }
+
         //la methode servant à remplir la pile de pioches quand celle-ci est vide, et le brasser
         private async void RemplirPilePioche()
         {
-            Carte topCarte = new Carte(0,0);
+            Carte topCarte = new Carte(0, 0);
             List<Carte> transition = new List<Carte>();
             List<Carte> brasserCarte = new List<Carte>();
             while (pileDePioche.Taille() < tableDeJeu.Taille())
@@ -75,7 +84,7 @@ namespace Jeu_Uno
             Carte carteRandom;
             while (transition.Count > 0)
             { // selectionner une carte au hasard
-               int numberRandom = new Random().Next(0, transition.Count);
+                int numberRandom = new Random().Next(0, transition.Count);
                 carteRandom = transition[numberRandom];
                 brasserCarte.Add(carteRandom);
                 transition.RemoveAt(numberRandom);
@@ -85,11 +94,14 @@ namespace Jeu_Uno
                 Carte uneCarte = brasserCarte[a];
                 // Ajouter dans la Pile de Pioche du jeu et Supprimer dans la Pile de jeu
                 pileDePioche.Push(uneCarte);
-                brasserCarte.RemoveAt(a);
             }
-            Console.WriteLine(" =====>>>>> La Pile vient d'être remplit, Poursuivons la partie...\n");
+            //PileDePioche.BrasseurDeCarte(tableDeJeu,transition,brasserCarte,pileDePioche);
+            Console.WriteLine("\n\n\t\t\t\t▒▒▒▒▒▒▒▒▒");
+            Console.WriteLine("▒▒▒▒▒▒▒▒▒ La Pile vient d'être remplit, Poursuivons la partie...▒▒▒▒▒▒▒▒▒");
+            Console.WriteLine("\t\t\t\t▒▒▒▒▒▒▒▒▒\n\n");
             await Task.Delay(1500);
         }
+
         // Methode Qui permet de distribuer à cahcun de Joueurs 8 Cartes au debut du jeu
         public List<Carte> DistributionCarte()
         {
@@ -103,12 +115,12 @@ namespace Jeu_Uno
                 Console.WriteLine("erreur!");
             return cartesEnMain;
         }
+
         // Methode asychrone qui lance le jeu (la partie)
         public async void DebutPartie(object sender, DepotEtPiocheEvent e)
         {
             LinkedListNode<Joueur> current = e.Joueur;
-            //LinkedListNode<Joueur> current = e.Joueur;
-            if(!tableDeJeu.IsNull())
+            if (!tableDeJeu.IsNull())
                 topCarte = tableDeJeu.Peek();
 
             if (tableDeJeu.Taille() == 0)//la paritie vient de conmencer ,y a pas de carte sur pile de depot
@@ -116,6 +128,8 @@ namespace Jeu_Uno
                 Console.WriteLine("{0} a joue la carte {1}", current.Value.ToString(), current.Value.CartesEnMain[0].ToString());
                 tableDeJeu.Push(current.Value.CartesEnMain[0]);
                 current.Value.CartesEnMain.RemoveAt(0);
+                current.Value.Listing();
+                Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
             }
             else
             {
@@ -125,17 +139,24 @@ namespace Jeu_Uno
                     if (a.Color == tableDeJeu.Peek().Color || a.ValeurCarte == tableDeJeu.Peek().ValeurCarte)// les joueur va deposer la premier carte adapté
                     {
                         tableDeJeu.Push(a);
-                        e.Joueur.Value.CartesEnMain.Remove(a);
-                        Console.WriteLine("------------------------------- Pile de jeu : " + topCarte + "\n" + current.Value.Prenom + " a joué " + a.ToString()
-                        + "\tNbre Carte en main : " + current.Value.CartesEnMain.Count + "\n");
-                        break;
+                        Carte carteSupp = a;
+                        if (a.Color == carteSupp.Color && a.ValeurCarte == carteSupp.ValeurCarte)
+                        {
+                            e.Joueur.Value.CartesEnMain.Remove(a);
+                            Console.WriteLine("------------------------------- Pile de jeu : " + topCarte + "\n" + current.Value.Prenom + " a joué " + a.ToString()
+                            + "\t\tNbre Carte en main : " + current.Value.CartesEnMain.Count);
+                            e.Joueur.Value.Listing();
+                            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+                            break;
+                        }
                     }
+
                 }
                 if (e.Joueur.Value.CartesEnMain.Count == 0)//quand un joueur a depose sa dernier carte ,il gargne la partie
                 {
-                    Console.WriteLine("*==========================================================*\n*======>\t"
-                            + current.Value.Prenom + "* " + current.Value.Nom + " a remporté la Partie " +
-                            "<======*\n*==========================================================*");
+                    Console.WriteLine("\n\n\t\t▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓\n\t\t▓▒▓▒▓▒▓▒▓▒▓\t"
+                            + current.Value.Prenom + " " + current.Value.Nom + " a remporté la Partie\t" +
+                            "▓▒▓▒▓▒▓▒\n\t\t▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓");
                     Console.Read();
                     Environment.Exit(0);
                 }
@@ -145,7 +166,7 @@ namespace Jeu_Uno
                     pioche(e);
                 }
             }
-                await Task.Delay(1200); // Asynchronisation avec un delay de 1,2 seconde
+            await Task.Delay(1200); // Asynchronisation avec un delay de 1,2 seconde
         }
     }
 }
