@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/Inf1035-tp1-final.csproj",
+      "projectUniqueName": "/Users/ila/Documents/classes/Concepts/inf1035-tp1/Inf1035-tp1-final/Inf1035-tp1-final.csproj",
       "projectName": "Inf1035-tp1-final",
-      "projectPath": "/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/Inf1035-tp1-final.csproj",
+      "projectPath": "/Users/ila/Documents/classes/Concepts/inf1035-tp1/Inf1035-tp1-final/Inf1035-tp1-final.csproj",
       "packagesPath": "/Users/ila/.nuget/packages/",
-      "outputPath": "/Users/ila/Projects/Inf1035-tp1-final/Inf1035-tp1-final/obj/",
+      "outputPath": "/Users/ila/Documents/classes/Concepts/inf1035-tp1/Inf1035-tp1-final/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ila/.config/NuGet/NuGet.Config"
