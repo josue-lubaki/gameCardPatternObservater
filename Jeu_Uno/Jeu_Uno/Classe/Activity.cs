@@ -1,8 +1,9 @@
 ﻿using Jeu_Uno.Classe;
 using System;
 using System.Collections.Generic;
+
 /*====================================================================*/
-/*          @Authors : Josue Lubaki & Ismael Coulibaly                */
+/*          @Authors : Josue Lubaki & Ismael Coulibaly & Xuyao Hu     */
 /*====================================================================*/
 namespace Jeu_Uno
 {
@@ -37,7 +38,10 @@ namespace Jeu_Uno
             Partie.pileDePioche.Pop();
             return carte_dessus;
         }
-        public static void PreDistribution()
+
+        
+       
+        public static void Distribution()
         {
             int cpt = 1;
             while (cpt <= Program.nbreJoueurUser)
@@ -51,7 +55,7 @@ namespace Jeu_Uno
             }
         }
         // Création des 52 Cartes de la Partie
-        public static void InitialisationCarte()
+        public static void InitialisationCartes()
         {
             for (int i = 1; i <= 13; i++)
             {

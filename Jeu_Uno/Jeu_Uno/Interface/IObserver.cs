@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 /*====================================================================*/
-/*          @Authors : Josue Lubaki & Ismael Coulibaly                */
+/*          @Authors : Josue Lubaki & Ismael Coulibaly & Xuyao Hu     */
 /*====================================================================*/
 namespace Jeu_Uno
 {

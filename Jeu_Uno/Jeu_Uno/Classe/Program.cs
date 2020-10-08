@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 /*====================================================================*/
-/*          @Authors : Josue Lubaki & Ismael Coulibaly                */
+/*          @Authors : Josue Lubaki & Ismael Coulibaly & Xuyao Hu     */
 /*====================================================================*/
 namespace Jeu_Uno
 {
@@ -19,8 +19,8 @@ namespace Jeu_Uno
 
             // Initialisation de la Partie et Chargement des cartes
             Partie partie = new Partie();
-            Activity.InitialisationCarte();
-            Activity.PreDistribution();
+            Activity.InitialisationCartes();
+            Activity.Distribution();
             List<Carte> listCardPlayer = new List<Carte>();
             List<Joueur> listeInscription = new List<Joueur>();
             Joueur jr = null;

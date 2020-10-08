@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 /*====================================================================*/
-/*          @Authors : Josue Lubaki & Ismael Coulibaly                */
+/*          @Authors : Josue Lubaki & Ismael Coulibaly & Xuyao Hu     */
 /*====================================================================*/
 namespace Jeu_Uno
 {
