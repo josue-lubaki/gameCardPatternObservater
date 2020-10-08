@@ -31,7 +31,7 @@ namespace Jeu_Uno
             return k;
         }
 
-        public static Carte Piochee()
+        public static Carte Piocher()
         {
             Carte carte_dessus = Partie.pileDePioche.Peek();
             // retirer la carte selectionnée de la Pile de pioche pour éviter d'avoir des doublons
@@ -48,7 +48,7 @@ namespace Jeu_Uno
             {
                 for (int t = 0; t < 8; t++)
                 {
-                    Carte hasard = Piochee();
+                    Carte hasard = Piocher();
                     Program.liste_contener.Add(hasard);
                 }
                 cpt++;

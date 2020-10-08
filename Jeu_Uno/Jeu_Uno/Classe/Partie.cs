@@ -117,7 +117,7 @@ namespace Jeu_Uno
                 }
                 else
                 {
-                    Carte cartePoichee = Activity.Piochee();
+                    Carte cartePoichee = Activity.Piocher();
                     currentNext.Value.ListeCarte.Add(cartePoichee);
                     Console.WriteLine("\n" + currentNext.Value.Prenom + " a Poiché la carte " + cartePoichee
                        + "\tNbre Carte en main : " + currentNext.Value.ListeCarte.Count + "\n");
