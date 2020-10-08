@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-/*====================================================================*/
-/*          @Authors : Josue Lubaki & Ismael Coulibaly & Xuyao Hu     */
-/*====================================================================*/
+/*==========================================================================*/
+/*          @Authors : Josue Lubaki & Ismael Coulibaly & Xuyao Hu           */
+/*==========================================================================*/
 namespace Jeu_Uno
 {
     class Program
@@ -17,12 +17,7 @@ namespace Jeu_Uno
                 nbreJoueurUser = Convert.ToInt32(Console.ReadLine());
             } while (nbreJoueurUser < 2 || nbreJoueurUser > 4);
 
-            // Initialisation de la Partie et Chargement des cartes
-            Partie partie = new Partie();
-            Activity.InitialisationCarte();
-            Activity.PreDistribution();
-            List<Carte> listCardPlayer = new List<Carte>();
-            List<Joueur> listeInscription = new List<Joueur>();
+            LinkedList<Joueur> listeInscription = new LinkedList<Joueur>();
             Joueur jr = null;
             string nom, prenom;
             for (int a = 0; a < nbreJoueurUser; a++)
@@ -31,19 +26,11 @@ namespace Jeu_Uno
                 nom = Console.ReadLine();
                 Console.Write("Entrer le prenom du Joueur_" + (a + 1) + " : ");
                 prenom = Console.ReadLine();
-                listCardPlayer = new List<Carte>();
-                Activity.NbreCarteParContext(liste_contener, listCardPlayer);
-                jr = new Joueur(nom, prenom, listCardPlayer);
-                Partie.listeJoueur.AddLast(jr);
-                listeInscription.Add(jr);
-                liste_contener.RemoveRange(0, 8);
+                jr = new Joueur(nom, prenom);
+                listeInscription.AddLast(jr);
             }
-            for (int s = 0; s < listeInscription.Count; s++)
-            {
-                // les Joueurs s'inscrivent à la Partie
-                partie.Participer(listeInscription[s]);
-            }
-            partie.DebutPartie(jr);
+            Partie partie = new Partie(listeInscription);
+            partie.LancerPartie();
             Console.ReadLine();
         }
     }

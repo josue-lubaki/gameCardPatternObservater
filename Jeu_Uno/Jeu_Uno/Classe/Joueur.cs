@@ -1,27 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-/*====================================================================*/
-/*          @Authors : Josue Lubaki & Ismael Coulibaly                */
-/*====================================================================*/
+using System.Threading;
+using System.Threading.Tasks;
+/*==========================================================================*/
+/*          @Authors : Josue Lubaki & Ismael Coulibaly & Xuyao Hu           */
+/*==========================================================================*/
 namespace Jeu_Uno
 {
-    /** JOUEUR.cs : La Classe implemente l'interface IObserver ainsi que sa methode Update(). cette classe comporte essentiellement 2 methodes telles que :
-     * @see IsWinner() : qui verifie le nombre de carte du Joueur, si nbreCarte == 0, c'est notre gagnant
-     * @see Update() : qui renvoi en console "..." pour chacun des joueurs notifiés du changement de la Classe partie.cs
+    /** JOUEUR.cs : La Classe implemente L'Objet Joueur. cette classe comporte essentiellement 2 methodes telles que :
+     * @see Play() : Evenement du type asynchrone qui censé faire jouer chacun de joueur lorsque c'est à son tour
+     * @see ToString() : qui renvoi le nom et prenom du Joueur
      */
-    class Joueur : IObserver
+    class Joueur
     {
-        private List<Carte> listeCarte;
+        private List<Carte> carteEnMain;
         private string nom;
         private string prenom;
-        public static int nbreJoueur = 0;
+        /* Création un delegate du type LinkList<Joueur> pour gérer le fait que seul un Joueur faisant partit de la liste, 
+         * qui possède le droit d'effectuer L'Evenement de deposer et piocher une carte
+         * */
+        public delegate void EventHandler(object sender, DepotEtPiocheEvent e);
+        public event EventHandler Handlers;
         /* Constructor */
-        public Joueur(string nom, string prenom, List<Carte> maListe)
+        public Joueur(string nom, string prenom)
         {
             this.nom = nom;
             this.prenom = prenom;
-            listeCarte = maListe;
-            nbreJoueur++;
         }
         public string Nom
         {
@@ -33,33 +37,23 @@ namespace Jeu_Uno
             get { return prenom; }
             set { prenom = value; }
         }
-        public List<Carte> ListeCarte
+        public List<Carte> CartesEnMain
         {
-            get { return listeCarte; }
-            set { listeCarte = value; }
+            get { return carteEnMain; }
+            set { carteEnMain = value; }
         }
-
-        // Si la liste des cartes du joueur est vide, le joueur est gagnant
-        public bool IsWinner()
+        // Evenement du type asynchrone qui censé faire jouer chacun de joueur
+        public async void Play()
         {
-            if (listeCarte.Count == 0)
-            {
-                return true;
-            }
-            return false;
+            LinkedList<Joueur> cam = new LinkedList<Joueur>();
+            cam.AddLast(this);
+            DepotEtPiocheEvent e = new DepotEtPiocheEvent(cam.First);
+            Handlers(this, e);
+            await Task.Delay(800); 
         }
-
-        public void Update(ISubject subject)
-        {
-            //Pour annoncer que les joueurs ont bien pris en compte la notification (changement) envoyé par Partie.cs --> @see Notify()
-            Console.Write("...\t");
-        }
-
         public override string ToString()
         {
-            string output =
-          "\n\tNom : " + Nom
-          + "\n\tPrenom : " + Prenom + "Cartes : " + ListeCarte;
+            string output = Prenom + " " +  Nom;
             return output;
         }
     }

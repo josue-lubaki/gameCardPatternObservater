@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-/*====================================================================*/
-/*          @Authors : Josue Lubaki & Ismael Coulibaly                */
-/*====================================================================*/
+/*========================================================================== */
+/*          @Authors : Josue Lubaki & Ismael Coulibaly & Xuyao Hu           */
+/*==========================================================================*/
 namespace Jeu_Uno.Classe
 {
     /** PILEDEJEU.cs : implementer à partir du stack, donc ayant acces à toutes les methodes de la pile Stack [LIFO] */
@@ -48,6 +48,14 @@ namespace Jeu_Uno.Classe
                 return true;
             }
             return false;
+        }
+        // Vider la pile
+        public void Vider()
+        {
+            foreach (var item in Desk)
+            {
+                Desk.Pop();
+            }
         }
     }
 }
